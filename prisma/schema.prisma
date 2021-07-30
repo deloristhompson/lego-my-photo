@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  //CreateMany is a Prisma method that adds multiple rows at once
+  // previewFeatures = ["createMany"]
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+
+model Gallery {
+  id Int @id @default(autoincrement()) // @id = Unique identifier for the row. autoincrement = Number starts at 1 and automatically increases by one for each new row
+  name String // Name column that is a String
+  description String //Description column that is a String
+  createdAt DateTime @default(now()) // createdAt column that is a DateTime and defaulted to the current date and time
+  updatedAt DateTime @updatedAt // updatedAt column that is a DateTime and defaulted to the update time
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
