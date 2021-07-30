@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { PrismaClient } = require('@prisma/client');
 const faker = require('faker'); // Require the faker generator
 const prisma = new PrismaClient(); // Set our prisma constant to a new instance of the PrismaClient
