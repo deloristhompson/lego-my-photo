@@ -1,5 +1,5 @@
 // import styles from '../styles/Home.module.css'
-import { Head, Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 
 export default function Home() {
   return (
